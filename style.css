@@ -1,0 +1,247 @@
+    .header {
+        background-color: #e6623b;
+        height: 80px;
+        display: flex;
+        align-items: center;   /* vertical center */
+        justify-content: center;
+    }
+
+    .logo {
+        height: 320px;   /* control height instead of width */
+        width: auto;
+        display: block;
+    }
+    .logo-container {
+        padding: 22px 0px;
+        height: 100px;  /* optional */
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    .links a{
+        color:black;
+        padding: 0px 35px ;
+        text-decoration: none;
+        border-radius: 15px;
+        font-size: 23px;
+    }
+
+    .links a:hover{
+        background-color: #ed7652;
+    }
+
+    .links button {
+        border: none;
+        padding: 13px 13px;
+        border-radius: 15px;
+    }
+    .links button:hover {
+        background-color: rgb(198, 192, 192);
+    }
+
+    /* This targets the icon image inside the button */
+    .Card-Info .btn img {
+        transition: 0.3s; /* Makes the color change smooth */
+    }
+
+    /* This changes the icon's color to grey when you hover over the link */
+    .Card-Info .btn:hover img {
+        /* 0.7 makes it 30% darker than the original */
+        filter: brightness(0.7); 
+    }
+
+    .under-header {
+        background-color: #e6623b;
+        height: 70px;
+        display: flex;
+        align-items: center;   /* vertical center */
+        justify-content: center;
+    }
+
+    .Burger-Header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 33px;
+        font-weight: inherit;
+        color: #000000;
+    }
+
+    .Burger-Header h1 {
+            margin: 1%;
+    }
+
+    .Top-Selling {
+        padding: 15px 50px;
+        font-size: 23px;
+    }
+        
+        
+    .Top-Selling-Items {
+        display: flex;       /* Move units to a row */
+        flex-wrap: wrap;     /* Allow them to go to a new line if screen is full */
+        /* Centering items horizontally */
+        justify-content: center; 
+    
+        /* Equal spacing on both sides */
+        padding: 40px 20px;
+    
+        /* Space between individual cards */
+        gap: 50px;           /* Space between the burgers */
+        padding: 20px 20px;
+    }
+
+    .Top-Selling-Items .Burger-Img {
+        width: 180px;
+        padding-left: 40px;
+        display: block; 
+
+        /* THE FIX: Force the gap to close by pulling the next element up */
+        margin-bottom: -30px; 
+    
+        /* Ensure the burger sits ON TOP of the card if they overlap */
+        position: relative; 
+        z-index: 10;
+    }
+        
+    .Menu-Item {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; /* This centers the burger over the card */
+
+        /* Transition makes the movement smooth */
+        transition: all 0.4s ease;
+        cursor: pointer;
+    }
+
+    .Menu-Item:hover {
+        /* Lifts the whole burger and card up */
+        transform: translateY(-10px);
+    }
+
+    .Burger-Img {
+        /* So the image can also animate smoothly */
+        transition: transform 0.4s ease;
+    }
+
+    /* Re-applying your previous fix to this specific structure */
+    .Menu-Item .Burger-Img {
+        margin-bottom: -30px; /* Pulls the card up to meet the burger */
+        z-index: 1;           /* Keeps burger on top */
+        padding-left: 0;      /* Remove that old padding so it centers correctly */
+    }
+
+    .Menu-Item:hover .Burger-Img {
+        /* Makes the burger image grow slightly */
+        transform: scale(1.08);
+    }
+    /* --- The Card inside the Item --- */
+    
+    /* --- Deepen the shadow when hovering --- */
+    .Menu-Item:hover .Card {
+        /* Creates a stronger shadow to simulate height */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .Card {
+        width: 290px;
+        height: 170px;
+        min-height: 170px;
+        flex-shrink: 0;
+        background-color: rgb(240, 244, 247);
+        border-radius: 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+
+        /* Soft shadow that will get deeper on hover */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.4s ease;
+    }
+
+    .Card-Info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+            
+    }
+
+    .Card-Info .btn {
+        padding: 0px 17px 12px 0px;
+    }
+        
+        
+    .Name .San-Name {
+        font-size: 23px;
+    }
+
+    .Name .Des {
+        font-size: 18px;
+        color: #696868;
+    }
+
+    .Name .Price {
+        font-size: 20px;
+    }
+        
+    /* --- Footer Main Container --- */
+    .footer {
+        background-color: #1a1a1a;     /* Gives it a deep dark grey/black look */
+        color: #ffffff;                /* Sets default text color to white */
+        padding: 50px 0 20px 0;          /* Internal spacing: 50px top, 20px bottom */
+        margin-top: 175px;               /* Creates a gap between the content and footer */
+        border-top: 5px solid #e6623b; /* Adds a thick orange line at the very top */
+    }
+
+    /* --- Content Layout (Flexbox) --- */
+    .footer-content {
+        display: flex;                 /* Turns on Flexbox layout */
+        justify-content: space-around; /* Spreads columns evenly across the width */
+        flex-wrap: wrap;               /* If the screen is small, columns stack vertically */
+        max-width: 1100px;             /* Prevents the footer from getting too wide */
+        margin: 0 auto;                /* Centers the whole block in the middle */
+    }
+
+    /* --- Brand and Section Headings --- */
+    .footer h2, .footer h3 {
+        color: #e6623b;             /* Uses your signature orange color */
+        font-size: 22px;              /* Sets the text size */
+        margin-bottom: 20px;          /* Adds space below the title */
+    }
+
+    /* --- Navigation & Social Links --- */
+    .footer a {
+        display: block;               /* Makes each link sit on its own line */
+        color: #bbbbbb;               /* A soft grey so it doesn't distract from titles */
+        text-decoration: none;        /* Removes the default underline */
+        margin-bottom: 12px;          /* Space between one link and the next */
+        transition: all 0.3s ease;    /* Makes any change (like color) happen smoothly */
+    }
+
+    /* --- Link Hover Effects --- */
+    .footer a:hover {
+        color: #ffffff;             /* Turns the link pure white */
+        padding-left: 10px;           /* Pushes the text 10px to the right */
+        font-weight: bold;            /* Makes the text thicker */
+    }
+
+    /* --- Copyright Section --- */
+    .footer-bottom {
+        text-align: center;           /* Centers the copyright text */
+        border-top: 1px solid #333333; /* A very subtle thin line above the text */
+        margin-top: 40px;             /* Space above the line */
+        padding-top: 20px;            /* Space below the line */
+        font-size: 14px;              /* Smaller text for less importance */
+        color: #777777;               /* Muted grey color */
+    }
